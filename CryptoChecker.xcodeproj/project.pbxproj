@@ -1,0 +1,698 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D0E5AB6027C546AD007B022A /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E5AB5F27C546AD007B022A /* Tests_iOS.swift */; };
+		D0E5AB6227C546AD007B022A /* Tests_iOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E5AB6127C546AD007B022A /* Tests_iOSLaunchTests.swift */; };
+		D0E5AB6C27C546AD007B022A /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E5AB6B27C546AD007B022A /* Tests_macOS.swift */; };
+		D0E5AB6E27C546AD007B022A /* Tests_macOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E5AB6D27C546AD007B022A /* Tests_macOSLaunchTests.swift */; };
+		D0E5AB6F27C546AD007B022A /* CryptoCheckerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E5AB4727C546AA007B022A /* CryptoCheckerApp.swift */; };
+		D0E5AB7027C546AD007B022A /* CryptoCheckerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E5AB4727C546AA007B022A /* CryptoCheckerApp.swift */; };
+		D0E5AB7127C546AD007B022A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E5AB4827C546AA007B022A /* ContentView.swift */; };
+		D0E5AB7227C546AD007B022A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E5AB4827C546AA007B022A /* ContentView.swift */; };
+		D0E5AB7327C546AD007B022A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0E5AB4927C546AD007B022A /* Assets.xcassets */; };
+		D0E5AB7427C546AD007B022A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0E5AB4927C546AD007B022A /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D0E5AB5C27C546AD007B022A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D0E5AB4227C546AA007B022A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D0E5AB4D27C546AD007B022A;
+			remoteInfo = "CryptoChecker (iOS)";
+		};
+		D0E5AB6827C546AD007B022A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D0E5AB4227C546AA007B022A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D0E5AB5327C546AD007B022A;
+			remoteInfo = "CryptoChecker (macOS)";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D0E5AB4727C546AA007B022A /* CryptoCheckerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoCheckerApp.swift; sourceTree = "<group>"; };
+		D0E5AB4827C546AA007B022A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D0E5AB4927C546AD007B022A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D0E5AB4E27C546AD007B022A /* CryptoChecker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoChecker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0E5AB5427C546AD007B022A /* CryptoChecker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoChecker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0E5AB5627C546AD007B022A /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		D0E5AB5B27C546AD007B022A /* Tests iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0E5AB5F27C546AD007B022A /* Tests_iOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_iOS.swift; sourceTree = "<group>"; };
+		D0E5AB6127C546AD007B022A /* Tests_iOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_iOSLaunchTests.swift; sourceTree = "<group>"; };
+		D0E5AB6727C546AD007B022A /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0E5AB6B27C546AD007B022A /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
+		D0E5AB6D27C546AD007B022A /* Tests_macOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOSLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D0E5AB4B27C546AD007B022A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0E5AB5127C546AD007B022A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0E5AB5827C546AD007B022A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0E5AB6427C546AD007B022A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D0E5AB4127C546AA007B022A = {
+			isa = PBXGroup;
+			children = (
+				D0E5AB4627C546AA007B022A /* Shared */,
+				D0E5AB5527C546AD007B022A /* macOS */,
+				D0E5AB5E27C546AD007B022A /* Tests iOS */,
+				D0E5AB6A27C546AD007B022A /* Tests macOS */,
+				D0E5AB4F27C546AD007B022A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D0E5AB4627C546AA007B022A /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				D0E5AB4727C546AA007B022A /* CryptoCheckerApp.swift */,
+				D0E5AB4827C546AA007B022A /* ContentView.swift */,
+				D0E5AB4927C546AD007B022A /* Assets.xcassets */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		D0E5AB4F27C546AD007B022A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D0E5AB4E27C546AD007B022A /* CryptoChecker.app */,
+				D0E5AB5427C546AD007B022A /* CryptoChecker.app */,
+				D0E5AB5B27C546AD007B022A /* Tests iOS.xctest */,
+				D0E5AB6727C546AD007B022A /* Tests macOS.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D0E5AB5527C546AD007B022A /* macOS */ = {
+			isa = PBXGroup;
+			children = (
+				D0E5AB5627C546AD007B022A /* macOS.entitlements */,
+			);
+			path = macOS;
+			sourceTree = "<group>";
+		};
+		D0E5AB5E27C546AD007B022A /* Tests iOS */ = {
+			isa = PBXGroup;
+			children = (
+				D0E5AB5F27C546AD007B022A /* Tests_iOS.swift */,
+				D0E5AB6127C546AD007B022A /* Tests_iOSLaunchTests.swift */,
+			);
+			path = "Tests iOS";
+			sourceTree = "<group>";
+		};
+		D0E5AB6A27C546AD007B022A /* Tests macOS */ = {
+			isa = PBXGroup;
+			children = (
+				D0E5AB6B27C546AD007B022A /* Tests_macOS.swift */,
+				D0E5AB6D27C546AD007B022A /* Tests_macOSLaunchTests.swift */,
+			);
+			path = "Tests macOS";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D0E5AB4D27C546AD007B022A /* CryptoChecker (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D0E5AB7727C546AD007B022A /* Build configuration list for PBXNativeTarget "CryptoChecker (iOS)" */;
+			buildPhases = (
+				D0E5AB4A27C546AD007B022A /* Sources */,
+				D0E5AB4B27C546AD007B022A /* Frameworks */,
+				D0E5AB4C27C546AD007B022A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "CryptoChecker (iOS)";
+			productName = "CryptoChecker (iOS)";
+			productReference = D0E5AB4E27C546AD007B022A /* CryptoChecker.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D0E5AB5327C546AD007B022A /* CryptoChecker (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D0E5AB7A27C546AD007B022A /* Build configuration list for PBXNativeTarget "CryptoChecker (macOS)" */;
+			buildPhases = (
+				D0E5AB5027C546AD007B022A /* Sources */,
+				D0E5AB5127C546AD007B022A /* Frameworks */,
+				D0E5AB5227C546AD007B022A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "CryptoChecker (macOS)";
+			productName = "CryptoChecker (macOS)";
+			productReference = D0E5AB5427C546AD007B022A /* CryptoChecker.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D0E5AB5A27C546AD007B022A /* Tests iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D0E5AB7D27C546AD007B022A /* Build configuration list for PBXNativeTarget "Tests iOS" */;
+			buildPhases = (
+				D0E5AB5727C546AD007B022A /* Sources */,
+				D0E5AB5827C546AD007B022A /* Frameworks */,
+				D0E5AB5927C546AD007B022A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D0E5AB5D27C546AD007B022A /* PBXTargetDependency */,
+			);
+			name = "Tests iOS";
+			productName = "Tests iOS";
+			productReference = D0E5AB5B27C546AD007B022A /* Tests iOS.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		D0E5AB6627C546AD007B022A /* Tests macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D0E5AB8027C546AD007B022A /* Build configuration list for PBXNativeTarget "Tests macOS" */;
+			buildPhases = (
+				D0E5AB6327C546AD007B022A /* Sources */,
+				D0E5AB6427C546AD007B022A /* Frameworks */,
+				D0E5AB6527C546AD007B022A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D0E5AB6927C546AD007B022A /* PBXTargetDependency */,
+			);
+			name = "Tests macOS";
+			productName = "Tests macOS";
+			productReference = D0E5AB6727C546AD007B022A /* Tests macOS.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D0E5AB4227C546AA007B022A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1320;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					D0E5AB4D27C546AD007B022A = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+					D0E5AB5327C546AD007B022A = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+					D0E5AB5A27C546AD007B022A = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = D0E5AB4D27C546AD007B022A;
+					};
+					D0E5AB6627C546AD007B022A = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = D0E5AB5327C546AD007B022A;
+					};
+				};
+			};
+			buildConfigurationList = D0E5AB4527C546AA007B022A /* Build configuration list for PBXProject "CryptoChecker" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D0E5AB4127C546AA007B022A;
+			productRefGroup = D0E5AB4F27C546AD007B022A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D0E5AB4D27C546AD007B022A /* CryptoChecker (iOS) */,
+				D0E5AB5327C546AD007B022A /* CryptoChecker (macOS) */,
+				D0E5AB5A27C546AD007B022A /* Tests iOS */,
+				D0E5AB6627C546AD007B022A /* Tests macOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D0E5AB4C27C546AD007B022A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0E5AB7327C546AD007B022A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0E5AB5227C546AD007B022A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0E5AB7427C546AD007B022A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0E5AB5927C546AD007B022A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0E5AB6527C546AD007B022A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D0E5AB4A27C546AD007B022A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0E5AB7127C546AD007B022A /* ContentView.swift in Sources */,
+				D0E5AB6F27C546AD007B022A /* CryptoCheckerApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0E5AB5027C546AD007B022A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0E5AB7227C546AD007B022A /* ContentView.swift in Sources */,
+				D0E5AB7027C546AD007B022A /* CryptoCheckerApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0E5AB5727C546AD007B022A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0E5AB6227C546AD007B022A /* Tests_iOSLaunchTests.swift in Sources */,
+				D0E5AB6027C546AD007B022A /* Tests_iOS.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0E5AB6327C546AD007B022A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0E5AB6E27C546AD007B022A /* Tests_macOSLaunchTests.swift in Sources */,
+				D0E5AB6C27C546AD007B022A /* Tests_macOS.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D0E5AB5D27C546AD007B022A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D0E5AB4D27C546AD007B022A /* CryptoChecker (iOS) */;
+			targetProxy = D0E5AB5C27C546AD007B022A /* PBXContainerItemProxy */;
+		};
+		D0E5AB6927C546AD007B022A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D0E5AB5327C546AD007B022A /* CryptoChecker (macOS) */;
+			targetProxy = D0E5AB6827C546AD007B022A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		D0E5AB7527C546AD007B022A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D0E5AB7627C546AD007B022A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		D0E5AB7827C546AD007B022A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yes2011.CryptoChecker;
+				PRODUCT_NAME = CryptoChecker;
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D0E5AB7927C546AD007B022A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yes2011.CryptoChecker;
+				PRODUCT_NAME = CryptoChecker;
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D0E5AB7B27C546AD007B022A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yes2011.CryptoChecker;
+				PRODUCT_NAME = CryptoChecker;
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		D0E5AB7C27C546AD007B022A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yes2011.CryptoChecker;
+				PRODUCT_NAME = CryptoChecker;
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		D0E5AB7E27C546AD007B022A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yes2011.Tests-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "CryptoChecker (iOS)";
+			};
+			name = Debug;
+		};
+		D0E5AB7F27C546AD007B022A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yes2011.Tests-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "CryptoChecker (iOS)";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D0E5AB8127C546AD007B022A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yes2011.Tests-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "CryptoChecker (macOS)";
+			};
+			name = Debug;
+		};
+		D0E5AB8227C546AD007B022A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yes2011.Tests-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "CryptoChecker (macOS)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D0E5AB4527C546AA007B022A /* Build configuration list for PBXProject "CryptoChecker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0E5AB7527C546AD007B022A /* Debug */,
+				D0E5AB7627C546AD007B022A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D0E5AB7727C546AD007B022A /* Build configuration list for PBXNativeTarget "CryptoChecker (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0E5AB7827C546AD007B022A /* Debug */,
+				D0E5AB7927C546AD007B022A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D0E5AB7A27C546AD007B022A /* Build configuration list for PBXNativeTarget "CryptoChecker (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0E5AB7B27C546AD007B022A /* Debug */,
+				D0E5AB7C27C546AD007B022A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D0E5AB7D27C546AD007B022A /* Build configuration list for PBXNativeTarget "Tests iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0E5AB7E27C546AD007B022A /* Debug */,
+				D0E5AB7F27C546AD007B022A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D0E5AB8027C546AD007B022A /* Build configuration list for PBXNativeTarget "Tests macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0E5AB8127C546AD007B022A /* Debug */,
+				D0E5AB8227C546AD007B022A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D0E5AB4227C546AA007B022A /* Project object */;
+}
