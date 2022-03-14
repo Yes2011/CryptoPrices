@@ -9,9 +9,10 @@ import SwiftUI
 
 @main
 struct CryptoCheckerApp: App {
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView()
         }
     }
 }
