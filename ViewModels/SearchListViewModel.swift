@@ -15,14 +15,15 @@ class SearchListViewModel: ObservableObject {
     @Published private(set) var searchResults: [Coin] = []
     @AppStorage(AppStorageKey.currency) private var userCurrency: Currency = .usd
 
-    let coinGecko = CoinGeckoService()
+    let coinGecko: CoinGeckoServiceProtocol
 
-    init(coins: [Coin] = []) {
+    init(coinGecko: CoinGeckoServiceProtocol, coins: [Coin] = []) {
+        self.coinGecko = coinGecko
         self.coins = coins
     }
 
     func fetchCoins() async {
-        if let coins = try? await coinGecko.fetchCoins(currency: userCurrency.rawValue) {
+        if let coins = try? await coinGecko.fetchCoins(coinIds: [], currency: userCurrency.rawValue) {
             self.coins = coins
             self.searchResults = coins
         }

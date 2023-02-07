@@ -9,11 +9,16 @@ import SwiftUI
 
 struct SearchListView: View {
 
-    @StateObject var viewModel = SearchListViewModel()
+    @StateObject var viewModel: SearchListViewModel
     @Binding var showSearch: Bool
     @State var searchText = ""
     @State var showCoinDetail = false
     @State var tappedCoin: Coin?
+
+    init(searchListVm: SearchListViewModel, showSearch: Binding<Bool>) {
+        self._viewModel = StateObject(wrappedValue: searchListVm)
+        self._showSearch = showSearch
+    }
 
     var body: some View {
         NavigationView {
@@ -58,13 +63,16 @@ struct SearchListView: View {
                                    offsetY: 0,
                                    opacity: 1))
         .sheet(isPresented: $showCoinDetail) {
-            CoinDetailView(showCoinDetail: $showCoinDetail, coin: $tappedCoin)
+            CoinDetailView(coinDetailVm: CoinDetailViewModel(coinGecko: CoinGeckoService()),
+                           showCoinDetail: $showCoinDetail,
+                           coin: $tappedCoin)
         }
     }
 }
 
 struct SearchListView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchListView(showSearch: .constant(false))
+        SearchListView(searchListVm: SearchListViewModel(coinGecko: CoinGeckoPreviewService()),
+                       showSearch: .constant(false))
     }
 }

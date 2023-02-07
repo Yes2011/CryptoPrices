@@ -19,7 +19,7 @@ struct HomeView: View {
     @State var showNetworkAlert: Bool = false
     @AppStorage(AppStorageKey.coins) private var userCoins: String = CoinName.bitcoin
     @AppStorage(AppStorageKey.currency) private var userCurrency: Currency = .usd
-    
+
     init(homeVm: HomeViewModel) {
         self._viewModel = StateObject(wrappedValue: homeVm)
     }
@@ -100,7 +100,9 @@ struct HomeView: View {
         .padding([.top, .horizontal], -Padding.large)
         .environment(\.defaultMinListRowHeight, 60)
         .sheet(isPresented: $showCoinDetail) {
-            CoinDetailView(showCoinDetail: $showCoinDetail, coin: $tappedCoin)
+            CoinDetailView(coinDetailVm: CoinDetailViewModel(coinGecko: CoinGeckoService()),
+                           showCoinDetail: $showCoinDetail,
+                           coin: $tappedCoin)
         }
         .onChange(of: userCoins) { newState in
             viewModel.updateUserCoins(value: newState)
@@ -128,7 +130,8 @@ extension HomeView {
                             .imageFrameStyle()
                     }
                     .sheet(isPresented: $showSearch) {
-                        SearchListView(showSearch: $showSearch)
+                        SearchListView(searchListVm: SearchListViewModel(coinGecko: CoinGeckoService()),
+                                       showSearch: $showSearch)
                     }
                     .background(.thickMaterial)
                     .cornerRadius(36)

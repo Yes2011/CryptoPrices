@@ -109,6 +109,6 @@ extension ChartView {
 
 struct ChartView_Previews: PreviewProvider {
     static var previews: some View {
-        ChartView(viewModel: CoinDetailViewModel())
+        ChartView(viewModel: CoinDetailViewModel(coinGecko: CoinGeckoPreviewService()))
     }
 }

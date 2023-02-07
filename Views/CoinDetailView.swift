@@ -31,12 +31,18 @@ extension DataTimeInterval: Identifiable {
 
 struct CoinDetailView: View {
 
-    @StateObject var viewModel = CoinDetailViewModel()
+    @StateObject var viewModel: CoinDetailViewModel
     @Binding var showCoinDetail: Bool
     @Binding var coin: Coin?
     @Environment(\.colorScheme) var colorScheme
     @State var pickerInterval: Int = 1
     @State var isFavoriteAdded = false
+
+    init(coinDetailVm: CoinDetailViewModel, showCoinDetail: Binding<Bool>, coin: Binding<Coin?>) {
+        self._viewModel = StateObject(wrappedValue: coinDetailVm)
+        self._showCoinDetail = showCoinDetail
+        self._coin = coin
+    }
 
     var body: some View {
         VStack {
@@ -149,8 +155,12 @@ extension CoinDetailView {
 struct CoinDetailView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            CoinDetailView(showCoinDetail: .constant(true), coin: .constant(Coin.testCoin1))
-            CoinDetailView(showCoinDetail: .constant(true), coin: .constant(Coin.testCoin1))
+            CoinDetailView(coinDetailVm: CoinDetailViewModel(coinGecko: CoinGeckoPreviewService()),
+                           showCoinDetail: .constant(true),
+                           coin: .constant(Coin.testCoin1))
+            CoinDetailView(coinDetailVm: CoinDetailViewModel(coinGecko: CoinGeckoPreviewService()),
+                           showCoinDetail: .constant(true),
+                           coin: .constant(Coin.testCoin1))
                 .previewDevice("iPhone 13 Pro Max")
         }
     }

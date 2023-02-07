@@ -18,7 +18,11 @@ class CoinDetailViewModel: ObservableObject {
     @AppStorage(AppStorageKey.coins) private var userCoins: String = CoinName.bitcoin
     @AppStorage(AppStorageKey.currency) private var userCurrency: Currency = .usd
 
-    let coinGecko = CoinGeckoService()
+    let coinGecko: CoinGeckoServiceProtocol
+
+    init(coinGecko: CoinGeckoServiceProtocol) {
+        self.coinGecko = coinGecko
+    }
 
     func fetchMarketData(coin: Coin?, days: Int = 1) async {
         guard coin != nil else { return }
