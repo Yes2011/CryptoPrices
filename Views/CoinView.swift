@@ -24,7 +24,8 @@ struct CoinView: View {
                             .font(.title.weight(.semibold))
                         Spacer()
                         if showExtended {
-                            Text(String(format: "%.1f", coin.priceChangePercentage24h) + Strings.percent)
+                            coin.priceChangePercentage24h != nil ?
+                            Text(String(format: "%.1f", coin.priceChangePercentage24h!) + Strings.percent) : Text("-")
                             .font(.caption.weight(.semibold))
                             .foregroundColor(changePercentage(value: coin.priceChangePercentage24h,
                                                               colorScheme: colorScheme))

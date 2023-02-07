@@ -36,11 +36,14 @@ struct CoinGeckoService {
         }
 
         guard let url = coinsURLComponents.url else { return nil }
+        var coins: [Coin]?
         let (data, _) = try await URLSession.shared.data(from: url)
-        if let coins = try? JSONDecoder().decode([Coin].self, from: data) {
-            return coins
+        do {
+            coins = try JSONDecoder().decode([Coin].self, from: data)
+        } catch {
+            debugPrint(error)
         }
-        return []
+        return coins
     }
 
     func fetchMarketData(coinId: String, currency: String = "usd", days: Int = 1) async throws -> CoinMarketData? {

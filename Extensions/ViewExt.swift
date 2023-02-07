@@ -10,8 +10,9 @@ import SwiftUI
 
 extension View {
 
-    func changePercentage(value: Double, colorScheme: ColorScheme) -> Color {
-        value > 0 ? Color.green : value < 0 ? Color.red : colorScheme == .dark ? Color.white : Color.black
+    func changePercentage(value: Double?, colorScheme: ColorScheme) -> Color {
+        guard let value = value else { return Color.clear }
+        return value > 0 ? Color.green : value < 0 ? Color.red : colorScheme == .dark ? Color.white : Color.black
     }
 
     func centerViewStyle() -> some View {
