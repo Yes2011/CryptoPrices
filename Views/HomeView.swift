@@ -10,7 +10,7 @@ import SwiftUI
 
 struct HomeView: View {
 
-    @StateObject var viewModel = HomeViewModel()
+    @StateObject var viewModel: HomeViewModel
     @State var showSearch: Bool = false
     @State var showSettings: Bool = false
     @State var showCoinDetail: Bool = false
@@ -19,6 +19,10 @@ struct HomeView: View {
     @State var showNetworkAlert: Bool = false
     @AppStorage(AppStorageKey.coins) private var userCoins: String = CoinName.bitcoin
     @AppStorage(AppStorageKey.currency) private var userCurrency: Currency = .usd
+    
+    init(homeVm: HomeViewModel) {
+        self._viewModel = StateObject(wrappedValue: homeVm)
+    }
 
     var body: some View {
         VStack(spacing: 8) {
@@ -174,11 +178,11 @@ extension HomeView {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            HomeView()
+            HomeView(homeVm: HomeViewModel(coinGecko: CoinGeckoPreviewService()))
                 .previewDevice("iPhone 14 Pro Max")
-            HomeView()
+            HomeView(homeVm: HomeViewModel(coinGecko: CoinGeckoPreviewService()))
                 .previewDevice("iPhone 14")
-            HomeView()
+            HomeView(homeVm: HomeViewModel(coinGecko: CoinGeckoPreviewService()))
                 .preferredColorScheme(.dark)
         }
     }

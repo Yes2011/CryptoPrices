@@ -16,9 +16,10 @@ class HomeViewModel: ObservableObject {
     @AppStorage(AppStorageKey.coins) private var userCoins: String = CoinName.bitcoin
     @AppStorage(AppStorageKey.currency) private var userCurrency: Currency = .usd
 
-    let coinGecko = CoinGeckoService()
+    let coinGecko: CoinGeckoServiceProtocol
 
-    init(global: Global = Global()) {
+    init(coinGecko: CoinGeckoServiceProtocol, global: Global = Global()) {
+        self.coinGecko = coinGecko
         self.global = global
         self.coins = storedCoins
         Timer.scheduledTimer(withTimeInterval: 60.0, repeats: true) { _ in

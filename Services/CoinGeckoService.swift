@@ -7,7 +7,13 @@
 
 import Foundation
 
-struct CoinGeckoService {
+protocol CoinGeckoServiceProtocol {
+    func fetchCoins(coinIds: [String], currency: String) async throws -> [Coin]?
+    func fetchMarketData(coinId: String, currency: String, days: Int) async throws -> CoinMarketData?
+    func fetchGlobal() async throws -> Global?
+}
+
+struct CoinGeckoService: CoinGeckoServiceProtocol {
     let coinGeckoBase = "https://api.coingecko.com/api/v3"
 
     func fetchCoins(coinIds: [String] = [], currency: String = "usd") async throws -> [Coin]? {
@@ -71,5 +77,19 @@ struct CoinGeckoService {
             debugPrint("ERROR:", error)
         }
         return global
+    }
+}
+
+struct CoinGeckoPreviewService: CoinGeckoServiceProtocol {
+    func fetchCoins(coinIds: [String], currency: String) async throws -> [Coin]? {
+        return [Coin.testCoin1, Coin.testCoin2]
+    }
+
+    func fetchMarketData(coinId: String, currency: String, days: Int) async throws -> CoinMarketData? {
+        CoinMarketData.testCoinMarketData
+    }
+
+    func fetchGlobal() async throws -> Global? {
+        Global()
     }
 }

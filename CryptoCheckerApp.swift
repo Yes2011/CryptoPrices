@@ -12,7 +12,7 @@ struct CryptoCheckerApp: App {
 
     var body: some Scene {
         WindowGroup {
-            HomeView()
+            HomeView(homeVm: HomeViewModel(coinGecko: CoinGeckoService()))
         }
     }
 }
