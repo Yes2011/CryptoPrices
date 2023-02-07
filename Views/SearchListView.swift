@@ -17,40 +17,48 @@ struct SearchListView: View {
 
     var body: some View {
         NavigationView {
-            List {
-                ForEach(0..<viewModel.searchResults.count, id: \.self) { coinIdx in
-                    Button {
-                        showCoinDetail = true
-                        tappedCoin = viewModel.searchResults[coinIdx]
-                    } label: {
-                        CoinView(coin: viewModel.searchResults[coinIdx], showExtended: false)
-                    }
-                    .buttonStyle(.plain)
+            if #available(iOS 16.0, *) {
+                searchList
+                .scrollContentBackground(.hidden)
+            } else {
+                searchList
+                .onAppear {
+                    UITableView.appearance().backgroundColor = .clear
                 }
-                .listRowSeparator(.hidden)
-                .listRowBackground(Color.clear)
-            }
-            .padding(.horizontal, -Padding.large)
-            .environment(\.defaultMinListRowHeight, 60)
-            .onAppear {
-                // Set the default to clear
-                UITableView.appearance().backgroundColor = .clear
-            }
-            .task {
-                await viewModel.fetchCoins()
-            }
-            .navigationTitle("Search")
-            .background(BackgroundBlob(imageName: BlobName.bg2,
-                                       offsetX: -200,
-                                       offsetY: 0,
-                                       opacity: 1))
-            .sheet(isPresented: $showCoinDetail) {
-                CoinDetailView(showCoinDetail: $showCoinDetail, coin: $tappedCoin)
             }
         }
         .searchable(text: $searchText)
         .onChange(of: searchText) { searchText in
             viewModel.searchResults(from: searchText)
+        }
+    }
+
+    var searchList: some View {
+        List {
+            ForEach(0..<viewModel.searchResults.count, id: \.self) { coinIdx in
+                Button {
+                    showCoinDetail = true
+                    tappedCoin = viewModel.searchResults[coinIdx]
+                } label: {
+                    CoinView(coin: viewModel.searchResults[coinIdx], showExtended: false)
+                }
+                .buttonStyle(.plain)
+            }
+            .listRowSeparator(.hidden)
+            .listRowBackground(Color.clear)
+        }
+        .padding(.horizontal, -Padding.large)
+        .environment(\.defaultMinListRowHeight, 60)
+        .task {
+            await viewModel.fetchCoins()
+        }
+        .navigationTitle("Search")
+        .background(BackgroundBlob(imageName: BlobName.bg2,
+                                   offsetX: -200,
+                                   offsetY: 0,
+                                   opacity: 1))
+        .sheet(isPresented: $showCoinDetail) {
+            CoinDetailView(showCoinDetail: $showCoinDetail, coin: $tappedCoin)
         }
     }
 }

@@ -22,38 +22,13 @@ struct HomeView: View {
 
     var body: some View {
         VStack(spacing: 8) {
-            List {
-                Section(header: change(value: viewModel.global.data.change)) {
-                    ForEach(viewModel.coins, id: \.self) { coin in
-                        Button {
-                            showCoinDetail = true
-                            tappedCoin = coin
-                        } label: {
-                            CoinView(coin: coin, showExtended: true)
-                        }
-                        .buttonStyle(.plain)
-                    }
-                    .onDelete { idxSet in
-                        viewModel.deleteUserCoin(idxSet: idxSet)
-                    }
-                }
-                .textCase(nil)
-                .listRowSeparator(.hidden)
-                .listRowBackground(Color.clear)
-            }
-            .listStyle(.grouped)
-            .padding([.top, .horizontal], -Padding.large)
-            .environment(\.defaultMinListRowHeight, 60)
-            .sheet(isPresented: $showCoinDetail) {
-                CoinDetailView(showCoinDetail: $showCoinDetail, coin: $tappedCoin)
-            }
-            .onAppear {
-                UITableView.appearance().backgroundColor = .clear
-            }
-            .onChange(of: userCoins) { newState in
-                viewModel.updateUserCoins(value: newState)
-                Task {
-                    await viewModel.reload()
+            if #available(iOS 16.0, *) {
+                savedCoinList
+                .scrollContentBackground(.hidden)
+            } else {
+                savedCoinList
+                .onAppear {
+                    UITableView.appearance().backgroundColor = .clear
                 }
             }
             HStack {
@@ -61,9 +36,9 @@ struct HomeView: View {
                 Button {
                     showSettings.toggle()
                 } label: {
-                    Image(systemName: ImageName.gear)
-                        .font(.system(size: 21, weight: .regular))
-                        .foregroundColorStyle()
+                    Text("¤")
+                        .font(.system(size: 28, weight: .light))
+                        .foregroundColorStyle(lightOpacity: 0.8)
                         .imageFrameStyle(.large)
                 }
                 .sheet(isPresented: $showSettings) {
@@ -87,6 +62,7 @@ struct HomeView: View {
         }
         .task {
             await viewModel.reload()
+            debugPrint("onAppear reload")
         }
         .onChange(of: userCurrency, perform: { _ in
             Task {
@@ -94,6 +70,41 @@ struct HomeView: View {
             }
         })
         .overlay(searchButton)
+    }
+
+    var savedCoinList: some View {
+        List {
+            Section(header: change(value: viewModel.global.data.change)) {
+                ForEach(viewModel.coins, id: \.self) { coin in
+                    Button {
+                        showCoinDetail = true
+                        tappedCoin = coin
+                    } label: {
+                        CoinView(coin: coin, showExtended: true)
+                    }
+                    .buttonStyle(.plain)
+                }
+                .onDelete { idxSet in
+                    viewModel.deleteUserCoin(idxSet: idxSet)
+                }
+            }
+            .textCase(nil)
+            .listRowSeparator(.hidden)
+            .listRowBackground(Color.clear)
+        }
+        .listStyle(.grouped)
+        .padding([.top, .horizontal], -Padding.large)
+        .environment(\.defaultMinListRowHeight, 60)
+        .sheet(isPresented: $showCoinDetail) {
+            CoinDetailView(showCoinDetail: $showCoinDetail, coin: $tappedCoin)
+        }
+        .onChange(of: userCoins) { newState in
+            viewModel.updateUserCoins(value: newState)
+            Task {
+                await viewModel.reload()
+            }
+        }
+
     }
 }
 
@@ -164,9 +175,9 @@ struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             HomeView()
-                .previewDevice("iPhone 11 Pro Max")
+                .previewDevice("iPhone 14 Pro Max")
             HomeView()
-                .previewDevice("iPhone 8")
+                .previewDevice("iPhone 14")
             HomeView()
                 .preferredColorScheme(.dark)
         }
