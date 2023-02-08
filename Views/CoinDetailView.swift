@@ -62,21 +62,8 @@ struct CoinDetailView: View {
                 .background(Circle().fill(.ultraThinMaterial))
             }
             .padding([.top, .trailing], Padding.medium)
-            HStack {
-                Text("current price:")
-                    .font(.body.weight(.regular))
-                Spacer()
-                CoinPriceView(value: coin?.price)
-            }
-            .padding(.horizontal, Padding.large)
-            ChartView(viewModel: viewModel)
-                .frame(height: 180)
-                .background(Color.clear)
+            priceHeaderView()
                 .padding(Padding.standard)
-                .background(Color.white.opacity(0.9))
-                .cornerRadius(4)
-                .padding(Padding.large)
-
             Picker("", selection: $pickerInterval) {
                 ForEach(DataTimeInterval.allCases) { interval in
                     Text(interval.description).tag(interval.rawValue)
@@ -84,14 +71,20 @@ struct CoinDetailView: View {
                 }
             }
             .pickerStyle(.segmented)
-            .padding(.horizontal, Padding.large)
+            .padding(.top, Padding.medium)
+            .padding(Padding.standard)
+            ChartView(viewModel: viewModel)
+                .frame(height: 180)
+                .background(Color.clear)
+                .padding(Padding.standard)
+                .background(Color.white.opacity(0.9))
+                .cornerRadius(4)
+                .padding(Padding.large)
             .onChange(of: pickerInterval) { newValue in
                 Task {
                     await viewModel.fetchMarketData(coin: coin, days: newValue)
                 }
             }
-            highLow
-                .padding([.top, .horizontal], Padding.large)
             Spacer()
             if !viewModel.userCoins(contains: coin) {
                 HStack {
@@ -135,21 +128,35 @@ struct CoinDetailView: View {
 
 extension CoinDetailView {
 
-    var highLow: some View {
-        VStack(spacing: 8) {
-            HStack {
-                Text("24h high:")
-                    .font(.body.weight(.regular))
+    func priceHeaderView() -> some View {
+        VStack {
+            HStack(alignment: .center) {
                 Spacer()
-                CoinPriceView(value: coin?.high24h)
-            }
-            HStack {
-                Text("24h low:")
-                    .font(.body.weight(.regular))
+                VStack(alignment: .center, spacing: 0) {
+                    CoinPriceView(value: coin?.price, font: .largeTitle.weight(.bold))
+                    HStack(alignment: .center) {
+                        Text("24h high:")
+                            .font(.footnote.weight(.light))
+                            .frame(maxWidth: .infinity, alignment: .trailing)
+                        Spacer()
+                        CoinPriceView(value: coin?.high24h, font: .footnote.weight(.light))
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                    }
+                    .frame(width: 180)
+                    HStack {
+                        Text("24h low:")
+                            .font(.footnote.weight(.light))
+                            .frame(maxWidth: .infinity, alignment: .trailing)
+                        Spacer()
+                        CoinPriceView(value: coin?.low24h, font: .footnote.weight(.light))
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                    }
+                    .frame(width: 180)
+                }
+                .centerViewStyle()
                 Spacer()
-                CoinPriceView(value: coin?.low24h)
-                    .font(.body.weight(.regular))
             }
+        .padding(.bottom, 8)
         }
     }
 }
