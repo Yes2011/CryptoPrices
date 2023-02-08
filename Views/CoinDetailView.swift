@@ -172,6 +172,7 @@ struct CoinDetailView_Previews: PreviewProvider {
                            showCoinDetail: .constant(true),
                            coin: .constant(Coin.testCoin1))
                 .previewDevice("iPhone 13 Pro Max")
+                .preferredColorScheme(.dark)
                 .environmentObject(NetworkMonitor())
         }
     }
