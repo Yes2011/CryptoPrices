@@ -12,7 +12,6 @@ struct CenterViewStyle: ViewModifier {
 
     func body(content: Content) -> some View {
             return content
-                .frame(width: 140)
                 .padding(.top, Padding.standard)
                 .padding(.bottom, Padding.medium)
                 .padding(.horizontal, Padding.large)
