@@ -49,6 +49,7 @@ struct SettingsView: View {
                 .font(.caption.weight(.regular))
                 .foregroundColorStyle()
         }
+        .frame(width: 140)
         .centerViewStyle()
     }
 
