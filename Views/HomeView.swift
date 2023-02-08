@@ -192,10 +192,13 @@ struct HomeView_Previews: PreviewProvider {
         Group {
             HomeView(homeVm: HomeViewModel(coinGecko: CoinGeckoPreviewService()))
                 .previewDevice("iPhone 14 Pro Max")
+                .environmentObject(NetworkMonitor())
             HomeView(homeVm: HomeViewModel(coinGecko: CoinGeckoPreviewService()))
                 .previewDevice("iPhone 14")
+                .environmentObject(NetworkMonitor())
             HomeView(homeVm: HomeViewModel(coinGecko: CoinGeckoPreviewService()))
                 .preferredColorScheme(.dark)
+                .environmentObject(NetworkMonitor())
         }
     }
 }
