@@ -103,5 +103,7 @@ struct SettingsView: View {
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
         SettingsView(showSettings: .constant(true))
+        SettingsView(showSettings: .constant(true))
+            .preferredColorScheme(.dark)
     }
 }
