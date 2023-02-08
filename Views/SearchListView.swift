@@ -14,6 +14,7 @@ struct SearchListView: View {
     @State var searchText = ""
     @State var showCoinDetail = false
     @State var tappedCoin: Coin?
+    @EnvironmentObject var monitor: NetworkMonitor
 
     init(searchListVm: SearchListViewModel, showSearch: Binding<Bool>) {
         self._viewModel = StateObject(wrappedValue: searchListVm)
@@ -67,6 +68,7 @@ struct SearchListView: View {
                            showCoinDetail: $showCoinDetail,
                            coin: $tappedCoin)
         }
+        .overlay(NetworkMonitorView(status: monitor.status))
     }
 }
 
@@ -74,5 +76,6 @@ struct SearchListView_Previews: PreviewProvider {
     static var previews: some View {
         SearchListView(searchListVm: SearchListViewModel(coinGecko: CoinGeckoPreviewService()),
                        showSearch: .constant(false))
+        .environmentObject(NetworkMonitor())
     }
 }

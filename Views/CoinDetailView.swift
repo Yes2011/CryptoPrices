@@ -37,6 +37,7 @@ struct CoinDetailView: View {
     @Environment(\.colorScheme) var colorScheme
     @State var pickerInterval: Int = 1
     @State var isFavoriteAdded = false
+    @EnvironmentObject var monitor: NetworkMonitor
 
     init(coinDetailVm: CoinDetailViewModel, showCoinDetail: Binding<Bool>, coin: Binding<Coin?>) {
         self._viewModel = StateObject(wrappedValue: coinDetailVm)
@@ -128,6 +129,7 @@ struct CoinDetailView: View {
                   message: Text("\(coin?.name ?? "") has been added to your favorites"),
                   dismissButton: .cancel(Text("Ok")))
          }
+        .overlay(NetworkMonitorView(status: monitor.status))
     }
 }
 
@@ -158,10 +160,12 @@ struct CoinDetailView_Previews: PreviewProvider {
             CoinDetailView(coinDetailVm: CoinDetailViewModel(coinGecko: CoinGeckoPreviewService()),
                            showCoinDetail: .constant(true),
                            coin: .constant(Coin.testCoin1))
+            .environmentObject(NetworkMonitor())
             CoinDetailView(coinDetailVm: CoinDetailViewModel(coinGecko: CoinGeckoPreviewService()),
                            showCoinDetail: .constant(true),
                            coin: .constant(Coin.testCoin1))
                 .previewDevice("iPhone 13 Pro Max")
+                .environmentObject(NetworkMonitor())
         }
     }
 }

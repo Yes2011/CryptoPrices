@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C3A4C83A2992C2B300F054CE /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A4C8392992C2B300F054CE /* NetworkMonitor.swift */; };
+		C3A4C83C2992C99900F054CE /* NetworkMonitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A4C83B2992C99900F054CE /* NetworkMonitorView.swift */; };
 		D00E146A27CE48F200DCABB3 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00E146927CE48F200DCABB3 /* HomeViewModel.swift */; };
 		D00E146C27CE493900DCABB3 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00E146B27CE493900DCABB3 /* Global.swift */; };
 		D00E146E27CE951800DCABB3 /* CoinDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00E146D27CE951800DCABB3 /* CoinDetailViewModel.swift */; };
@@ -48,6 +50,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C3A4C8392992C2B300F054CE /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
+		C3A4C83B2992C99900F054CE /* NetworkMonitorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitorView.swift; sourceTree = "<group>"; };
 		D00E146927CE48F200DCABB3 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		D00E146B27CE493900DCABB3 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		D00E146D27CE951800DCABB3 /* CoinDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDetailViewModel.swift; sourceTree = "<group>"; };
@@ -99,6 +103,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C3A4C8382992C29600F054CE /* Connectivity */ = {
+			isa = PBXGroup;
+			children = (
+				C3A4C8392992C2B300F054CE /* NetworkMonitor.swift */,
+			);
+			path = Connectivity;
+			sourceTree = "<group>";
+		};
 		D01FB5F127DA2017004300AB /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				D02F069427DF4558000A9623 /* README.md */,
+				C3A4C8382992C29600F054CE /* Connectivity */,
 				D033B92D27D7AFE00002C4E4 /* Extensions */,
 				D0E5AB8327C5472C007B022A /* Models */,
 				D0E5AB8427C54738007B022A /* Services */,
@@ -192,6 +205,7 @@
 				D0E5AB4827C546AA007B022A /* ContentView.swift */,
 				D05779EA27D8FA36002D4732 /* CreditsView.swift */,
 				D0E5AB8727C5478B007B022A /* HomeView.swift */,
+				C3A4C83B2992C99900F054CE /* NetworkMonitorView.swift */,
 				D02BFD9927CD264200B8558D /* SearchListView.swift */,
 			);
 			path = Views;
@@ -338,6 +352,8 @@
 				D03DEFD127DA482B00AC4A2D /* ForegroundColorStyle.swift in Sources */,
 				D01FB5F027D930BE004300AB /* SettingsViewModel.swift in Sources */,
 				D01FB5EC27D912B6004300AB /* BackgroundBlob.swift in Sources */,
+				C3A4C83A2992C2B300F054CE /* NetworkMonitor.swift in Sources */,
+				C3A4C83C2992C99900F054CE /* NetworkMonitorView.swift in Sources */,
 				D054E3E427DA791F00A1E954 /* CoinPriceView.swift in Sources */,
 				D02BFD9827CD245B00B8558D /* CoinView.swift in Sources */,
 				D00E146A27CE48F200DCABB3 /* HomeViewModel.swift in Sources */,
@@ -498,6 +514,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = H7KP6WS9BL;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

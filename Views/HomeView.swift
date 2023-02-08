@@ -19,6 +19,7 @@ struct HomeView: View {
     @State var showNetworkAlert: Bool = false
     @AppStorage(AppStorageKey.coins) private var userCoins: String = CoinName.bitcoin
     @AppStorage(AppStorageKey.currency) private var userCurrency: Currency = .usd
+    @EnvironmentObject var monitor: NetworkMonitor
 
     init(homeVm: HomeViewModel) {
         self._viewModel = StateObject(wrappedValue: homeVm)
@@ -56,11 +57,6 @@ struct HomeView: View {
             .overlay(footer)
         }
         .padding([.top, .horizontal], Padding.large)
-        .background(BackgroundBlob(imageName: BlobName.bg1,
-                                   offsetX: -120,
-                                   offsetY: -2,
-                                   opacity: 1).ignoresSafeArea())
-        .background(Color.black.opacity(0.05).ignoresSafeArea())
         .refreshable {
             await viewModel.reload()
         }
@@ -73,7 +69,20 @@ struct HomeView: View {
                 await viewModel.reload()
             }
         })
+        .onChange(of: monitor.status, perform: { _ in
+            if monitor.status == .connected {
+                Task {
+                    await viewModel.reload()
+                }
+            }
+        })
         .overlay(searchButton)
+        .background(BackgroundBlob(imageName: BlobName.bg1,
+                                   offsetX: -120,
+                                   offsetY: -2,
+                                   opacity: 1).ignoresSafeArea())
+        .background(Color.black.opacity(0.05).ignoresSafeArea())
+        .overlay(NetworkMonitorView(status: monitor.status))
     }
 
     var savedCoinList: some View {

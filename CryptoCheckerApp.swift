@@ -9,10 +9,12 @@ import SwiftUI
 
 @main
 struct CryptoCheckerApp: App {
-
+    @StateObject private var monitor = NetworkMonitor()
+    
     var body: some Scene {
         WindowGroup {
             HomeView(homeVm: HomeViewModel(coinGecko: CoinGeckoService()))
+                .environmentObject(monitor)
         }
     }
 }
