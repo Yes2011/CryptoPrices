@@ -179,7 +179,7 @@ extension HomeView {
 
     var footer: some View {
         VStack {
-            Text("Made by Crispin Lingford")
+            Text("Updated: " + (viewModel.lastUpdate?.formatted(date: .abbreviated, time: .standard) ?? "-") )
                     .font(.caption)
             Text("Powered by CoinGecko API")
                     .font(.system(size: 10, weight: .light))

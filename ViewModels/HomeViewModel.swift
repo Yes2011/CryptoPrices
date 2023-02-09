@@ -13,6 +13,7 @@ class HomeViewModel: ObservableObject {
 
     @Published private(set) var global = Global()
     @Published private(set) var coins: [Coin] = []
+    @Published private(set) var lastUpdate: Date?
     @AppStorage(AppStorageKey.coins) private var userCoins: String = CoinName.bitcoin
     @AppStorage(AppStorageKey.currency) private var userCurrency: Currency = .usd
 
@@ -40,6 +41,7 @@ class HomeViewModel: ObservableObject {
         if let coins = try? await coinGecko.fetchCoins(coinIds: storedCoins.map { $0.id },
                                                        currency: userCurrency.rawValue) {
             self.coins = coins
+            self.lastUpdate = Date()
         }
     }
 
